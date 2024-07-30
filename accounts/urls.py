@@ -7,5 +7,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path("", index, name="home"),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("signin/", index, name="signin"),
+    path("signup/", signup, name="signup"),
+]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
